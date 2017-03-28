@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Authors>Pedro Lamas</Authors>
+    <PackageProjectUrl>https://github.com/PedroLamas/DeferredEvents</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PedroLamas/DeferredEvents</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/PedroLamas/DeferredEvents/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <Description>Deferred Events allows event invocators to await for the asynchronous completion of all event handlers.</Description>
+  </PropertyGroup>
+
+</Project>
