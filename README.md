@@ -46,7 +46,7 @@ MyEvent?.Invoke(sender, EventArgs.Empty);
 await MyEvent.InvokeAsync(sender, DeferredEventArgs.Empty);
 ```
 
-The `InvokeAsync` is an extension method that will enable you to ensure we wait for the event handlers to finish their work before we proceed.
+The `InvokeAsync()` method is an extension method that will enable you to ensure we wait for the event handlers to finish their work before we proceed.
 
 Last step will be to change the event handlers code so it can take advantage of the deferred execution:
 
@@ -66,10 +66,12 @@ public async void OnMyEvent(object sender, DeferredEventArgs e)
     
     // awaiteable code
     
-    e.Complete();
+    deferral.Complete();
 }
 ```
 
-You **must** call `e.GetDeferral()` before any `await` call in your code to ensure that the event caller knows that it should wait for `e.Complete()`; ideally, it should be the first thing you do in the event handler code.
-
 You only need to call `e.GetDeferral()` if you actually want to the event caller to wait for the completion of the event handler; if you don't call it, it will just behave as a regular event handler.
+
+You **must** call `e.GetDeferral()` to get an `EventDeferral` instance before any `await` call in your code to ensure that the event caller knows that it should wait for `deferral.Complete()`; ideally, it should be the first thing you do in the event handler code.
+
+If you have indeed called `e.GetDeferral()`, then you **must** call `deferral.Complete()` to signal that the event handler has finished.
