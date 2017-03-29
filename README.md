@@ -1,4 +1,4 @@
-# Deferred Events [![Build status](https://ci.appveyor.com/api/projects/status/xuhdrwyjra7v5ra2?svg=true)](https://ci.appveyor.com/project/PedroLamas/deferredevents "Build Status")
+# Deferred Events [![Build status](https://ci.appveyor.com/api/projects/status/xuhdrwyjra7v5ra2?svg=true)](https://ci.appveyor.com/project/PedroLamas/deferredevents "Build Status") ![Latest stable version](https://img.shields.io/nuget/v/Cimbalino.Toolkit.svg?style=flat "Latest stable version")
 
 This repository contains a .NET Standard 1.0 implementation for Deferred Events.
 
@@ -69,3 +69,7 @@ public async void OnMyEvent(object sender, DeferredEventArgs e)
     e.Complete();
 }
 ```
+
+You **must** call `e.GetDeferral()` before any `await` call in your code to ensure that the event caller knows that it should wait for `e.Complete()`; ideally, it should be the first thing you do in the event handler code.
+
+You only need to call `e.GetDeferral()` if you actually want to the event caller to wait for the completion of the event handler; if you don't call it, it will just behave as a regular event handler.
