@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DeferredEvents
@@ -11,6 +12,12 @@ namespace DeferredEvents
         public static Task InvokeAsync<T>(this EventHandler<T> eventHandler, object sender, T eventArgs)
             where T : DeferredEventArgs
         {
+            return InvokeAsync(eventHandler, sender, eventArgs, CancellationToken.None);
+        }
+
+        public static Task InvokeAsync<T>(this EventHandler<T> eventHandler, object sender, T eventArgs, CancellationToken cancellationToken)
+            where T : DeferredEventArgs
+        {
             if (eventHandler == null)
             {
                 return CompletedTask;
@@ -20,9 +27,20 @@ namespace DeferredEvents
                 .OfType<EventHandler<T>>()
                 .Select(invocationDelegate =>
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
+
                     invocationDelegate(sender, eventArgs);
 
-                    return eventArgs.GetTaskAndReset() ?? CompletedTask;
+                    var deferral = eventArgs.GetCurrentDeferralAndReset();
+
+                    if (deferral != null)
+                    {
+                        cancellationToken.Register(() => deferral.Cancel());
+
+                        return deferral.GetTask();
+                    }
+
+                    return CompletedTask;
                 })
                 .ToArray();
 

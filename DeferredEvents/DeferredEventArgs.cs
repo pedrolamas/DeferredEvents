@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 namespace DeferredEvents
 {
@@ -19,7 +18,7 @@ namespace DeferredEvents
             }
         }
 
-        internal Task GetTaskAndReset()
+        internal EventDeferral GetCurrentDeferralAndReset()
         {
             lock (_eventDeferralLock)
             {
@@ -27,7 +26,7 @@ namespace DeferredEvents
 
                 _eventDeferral = null;
 
-                return eventDeferral?.GetTask();
+                return eventDeferral;
             }
         }
     }
