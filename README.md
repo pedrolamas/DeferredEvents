@@ -1,4 +1,4 @@
-# Deferred Events [![Build status](https://ci.appveyor.com/api/projects/status/xuhdrwyjra7v5ra2?svg=true)](https://ci.appveyor.com/project/PedroLamas/deferredevents "Build Status") ![Latest stable version](https://img.shields.io/nuget/v/Cimbalino.Toolkit.svg?style=flat "Latest stable version")
+# Deferred Events [![Build status](https://ci.appveyor.com/api/projects/status/xuhdrwyjra7v5ra2?svg=true)](https://ci.appveyor.com/project/PedroLamas/deferredevents "Build Status") ![Latest stable version](https://img.shields.io/nuget/v/DeferredEvents.svg?style=flat "Latest stable version")
 
 This repository contains a .NET Standard 1.0 implementation for Deferred Events.
 
