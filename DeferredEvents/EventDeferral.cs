@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DeferredEvents
@@ -10,10 +11,14 @@ namespace DeferredEvents
         {
         }
 
-        public void Complete() => _taskCompletionSource.TrySetResult(true);
+        public void Complete() => _taskCompletionSource.TrySetResult(null);
 
-        internal void Cancel() => _taskCompletionSource.TrySetCanceled();
-
-        internal Task GetTask() => _taskCompletionSource.Task;
+        internal async Task WaitForCompletion(CancellationToken cancellationToken)
+        {
+            using (cancellationToken.Register(() => _taskCompletionSource.TrySetCanceled()))
+            {
+                await _taskCompletionSource.Task;
+            }
+        }
     }
 }

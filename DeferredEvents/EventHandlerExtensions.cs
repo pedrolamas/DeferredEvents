@@ -33,14 +33,7 @@ namespace DeferredEvents
 
                     var deferral = eventArgs.GetCurrentDeferralAndReset();
 
-                    if (deferral != null)
-                    {
-                        cancellationToken.Register(() => deferral.Cancel());
-
-                        return deferral.GetTask();
-                    }
-
-                    return CompletedTask;
+                    return deferral?.WaitForCompletion(cancellationToken) ?? CompletedTask;
                 })
                 .ToArray();
 
