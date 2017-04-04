@@ -70,6 +70,19 @@ public async void OnMyEvent(object sender, DeferredEventArgs e)
 }
 ```
 
+You can also use the `using` pattern if you prefer:
+
+```csharp
+// after
+public async void OnMyEvent(object sender, DeferredEventArgs e)
+{
+    using (e.GetDeferral())
+    {
+        // awaiteable code
+    }
+}
+```
+
 You only need to call `e.GetDeferral()` if you actually want to the event caller to wait for the completion of the event handler; if you don't call it, it will just behave as a regular event handler.
 
 You **must** call `e.GetDeferral()` to get an `EventDeferral` instance before any `await` call in your code to ensure that the event caller knows that it should wait for `deferral.Complete()`; ideally, it should be the first thing you do in the event handler code.
