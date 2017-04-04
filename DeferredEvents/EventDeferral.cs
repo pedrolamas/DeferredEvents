@@ -1,9 +1,10 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace DeferredEvents
 {
-    public class EventDeferral
+    public class EventDeferral : IDisposable
     {
         private readonly TaskCompletionSource<object> _taskCompletionSource = new TaskCompletionSource<object>();
 
@@ -19,6 +20,11 @@ namespace DeferredEvents
             {
                 await _taskCompletionSource.Task;
             }
+        }
+
+        public void Dispose()
+        {
+            Complete();
         }
     }
 }
