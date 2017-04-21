@@ -4,7 +4,7 @@ This repository contains a .NET Standard 1.0 implementation for Deferred Events.
 
 Deferred Events allows event invocators to await for the asynchronous completion of all event handlers.
 
-## Usage
+## Installation
 
 Install the NuGet package by running the following command:
 
