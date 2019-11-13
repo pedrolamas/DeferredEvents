@@ -43,7 +43,7 @@ MyEvent?.Invoke(sender, EventArgs.Empty);
 
 ```csharp
 // after
-await MyEvent.InvokeAsync(sender, DeferredEventArgs.Empty);
+await MyEvent.InvokeAsync(sender, new DeferredEventArgs());
 ```
 
 The `InvokeAsync()` method is an extension method that will enable you to ensure we wait for the event handlers to finish their work before we proceed.
