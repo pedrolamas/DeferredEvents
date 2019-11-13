@@ -11,7 +11,7 @@
     <PackageLicenseUrl>https://pedrolamas.github.io/DeferredEvents/LICENSE.txt</PackageLicenseUrl>
     <Description>Deferred Events allows event invocators to await for the asynchronous completion of all event handlers.</Description>
     <Version>$(APPVEYOR_BUILD_VERSION)</Version>
-    <Version Condition="'$(Version)' == ''">1.0.4</Version>
+    <Version Condition="'$(Version)' == ''">1.0.5</Version>
   </PropertyGroup>
 
 </Project>
