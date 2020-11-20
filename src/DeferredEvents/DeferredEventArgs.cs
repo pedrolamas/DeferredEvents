@@ -4,7 +4,7 @@ namespace DeferredEvents
 {
     public class DeferredEventArgs : EventArgs
     {
-        [Obsolete("Please use `new DeferredEventArgs()` instead of this field. Check here for more information: https://github.com/PedroLamas/DeferredEvents/issues/1", true)]
+        [Obsolete("Please use `new DeferredEventArgs()` instead of this field. Check here for more information: https://github.com/pedrolamas/DeferredEvents/issues/1", true)]
         public new static readonly DeferredEventArgs Empty = new DeferredEventArgs();
 
         private readonly object _eventDeferralLock = new object();

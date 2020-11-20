@@ -6,7 +6,7 @@
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Authors>Pedro Lamas</Authors>
     <PackageProjectUrl>https://pedrolamas.github.io/DeferredEvents/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/PedroLamas/DeferredEvents</RepositoryUrl>
+    <RepositoryUrl>https://github.com/pedrolamas/DeferredEvents</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl>https://pedrolamas.github.io/DeferredEvents/LICENSE.txt</PackageLicenseUrl>
     <Description>Deferred Events allows event invocators to await for the asynchronous completion of all event handlers.</Description>
