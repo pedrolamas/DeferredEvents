@@ -1,4 +1,12 @@
-# Deferred Events [![Build status](https://ci.appveyor.com/api/projects/status/xuhdrwyjra7v5ra2?svg=true)](https://ci.appveyor.com/project/PedroLamas/deferredevents "Build Status") [![Latest stable version](https://img.shields.io/nuget/v/DeferredEvents.svg?style=flat)](https://www.nuget.org/packages/DeferredEvents/ "Latest stable version")
+# Deferred Events
+
+[![Project Maintenance](https://img.shields.io/maintenance/yes/2021.svg)](https://github.com/pedrolamas/DeferredEvents 'GitHub Repository')
+[![License](https://img.shields.io/github/license/pedrolamas/DeferredEvents.svg)](https://github.com/pedrolamas/DeferredEvents/blob/master/LICENSE 'License')
+
+[![CI](https://github.com/pedrolamas/DeferredEvents/workflows/CI/badge.svg)](https://github.com/pedrolamas/DeferredEvents/actions 'Build Status')
+[![Latest stable version](https://img.shields.io/nuget/v/DeferredEvents.svg?style=flat)](https://www.nuget.org/packages/DeferredEvents/ "Latest stable version")
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/pedrolamas?style=social)](https://twitter.com/pedrolamas '@pedrolamas')
 
 This repository contains a .NET Standard 1.0 implementation for Deferred Events.
 
