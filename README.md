@@ -1,6 +1,6 @@
 # Deferred Events
 
-[![Project Maintenance](https://img.shields.io/maintenance/yes/2021.svg)](https://github.com/pedrolamas/DeferredEvents 'GitHub Repository')
+[![Project Maintenance](https://img.shields.io/maintenance/no/2021.svg)](https://github.com/pedrolamas/DeferredEvents 'GitHub Repository')
 [![License](https://img.shields.io/github/license/pedrolamas/DeferredEvents.svg)](https://github.com/pedrolamas/DeferredEvents/blob/master/LICENSE 'License')
 
 [![CI](https://github.com/pedrolamas/DeferredEvents/workflows/CI/badge.svg)](https://github.com/pedrolamas/DeferredEvents/actions 'Build Status')
@@ -12,11 +12,17 @@ This repository contains a .NET Standard 1.0 implementation for Deferred Events.
 
 Deferred Events allows event invocators to await for the asynchronous completion of all event handlers.
 
+## Deprecation notice
+
+This repo has been deprecated as it is legacy and no longer maintained.
+
+The `DeferredEvents` are now part of the [Microsoft.Toolkit](https://www.nuget.org/profiles/Microsoft.Toolkit) where it will be maintained from this point on.
+
 ## Installation
 
 Install the NuGet package by running the following command:
 
-```
+```txt
 Install-Package DeferredEvents
 ```
 
