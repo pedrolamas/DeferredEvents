@@ -8,15 +8,15 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/pedrolamas?style=social)](https://twitter.com/pedrolamas '@pedrolamas')
 
+> ## Deprecation notice
+>
+> This repo has been deprecated as it is legacy and no longer maintained.
+>
+> The `DeferredEvents` are now part of the [Microsoft.Toolkit](https://www.nuget.org/profiles/Microsoft.Toolkit) where it will be maintained from this point on.
+
 This repository contains a .NET Standard 1.0 implementation for Deferred Events.
 
 Deferred Events allows event invocators to await for the asynchronous completion of all event handlers.
-
-## Deprecation notice
-
-This repo has been deprecated as it is legacy and no longer maintained.
-
-The `DeferredEvents` are now part of the [Microsoft.Toolkit](https://www.nuget.org/profiles/Microsoft.Toolkit) where it will be maintained from this point on.
 
 ## Installation
 
